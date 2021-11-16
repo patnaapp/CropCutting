@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.activity.PreHomeActivity"
+ android:background="#B4AFAF"
+    >
+    <RelativeLayout
+        android:id="@+id/rel1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <include
+            android:id="@+id/headerhome"
+            layout="@layout/activity_header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            />
+        <ImageView
+            android:id="@+id/logout_phse1"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/log2"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+  
+    <RelativeLayout
+        android:id="@+id/rel2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <include
+            android:id="@+id/footer"
+            layout="@layout/activity_footer"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="1dp" />
+    </RelativeLayout>
+
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Khesra Survey (Phase 1)"
+        android:textAlignment="center"
+        android:background="@drawable/orangebuttonshape"
+        android:id="@+id/btn_phase1"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="250dp"
+        android:textColor="#FFFFFF"
+        />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Crop Cutting Experiment (Phase 2)"
+        android:textAlignment="center"
+        android:background="@drawable/orangebuttonshape"
+        android:id="@+id/btn_phase2"
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:layout_below="@+id/btn_phase1"
+        />
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="139dp"
+        android:layout_marginTop="20dp">
+
+
+        <TextView
+            android:id="@+id/txtVersion_1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_weight=".5"
+            android:gravity="center"
+            android:text="App Version "
+            android:textColor="#098ea9"
+            android:textSize="15sp"
+            android:typeface="serif" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

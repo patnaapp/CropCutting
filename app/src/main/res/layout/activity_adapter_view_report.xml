@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    tools:context=".activity.Adapter_view_report">
+
+
+    <LinearLayout
+        android:padding="15dp"
+        android:layout_width="match_parent"
+        android:elevation="10dp"
+        android:background="@drawable/butttonsideshape1"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="362dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:weightSum="1">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/distt"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="0.5"-->
+                <!--android:text="Dist Name:"-->
+                <!--android:textColor="#161616"-->
+
+                <!--android:textSize="18dp"-->
+                <!--android:textStyle="bold" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/distt_nm"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="0.39"-->
+                <!--android:text="new text"-->
+                <!--android:textColor="#161616"-->
+                <!--android:textSize="18dp"-->
+                <!--android:textStyle="bold" />-->
+
+        <!--</LinearLayout>-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="362dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="10dp"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:weightSum="1">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/block"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="0.5"-->
+                <!--android:text="block Name:"-->
+                <!--android:textColor="#161616"-->
+                <!--android:textSize="18dp"-->
+                <!--android:textStyle="bold" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/block_nm"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="0.39"-->
+                <!--android:text="new text"-->
+                <!--android:textColor="#161616"-->
+                <!--android:textSize="18dp"-->
+                <!--android:textStyle="bold" />-->
+
+        <!--</LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="362dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/panchayat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Panchayat  Name     :"
+                android:textColor="#161616"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/panchayat_nm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="new text"
+                android:textColor="#161616"
+                android:textSize="15dp"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="362dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/farmerNm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Farmer Name            :"
+                android:textColor="#161616"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/farmer_Nm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="new text"
+                android:textColor="#161616"
+                android:textSize="15dp"
+                 />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="362dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/surveyNo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Khesra No                  :"
+                android:textColor="#161616"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/survey_No"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="new text"
+                android:textColor="#161616"
+                android:textSize="15dp"
+              />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="362dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/randomNo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Order Of Experiment:"
+                android:textColor="#161616"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/random_No"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="new text"
+                android:textColor="#161616"
+                android:textSize="15dp"
+               />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="362dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+            <TextView
+                android:id="@+id/cropName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Crop Name                :"
+                android:textColor="#161616"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/crop_Nm1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text=""
+                android:textColor="#161616"
+                android:textSize="15dp"
+               />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

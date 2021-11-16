@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#f7125116</color>
+    <color name="colorAccent">#7c8130</color>
+    <color name="colorwhite">#92927E</color>
+    <color name="holo_red_dark">#ffcc0000</color>
+    <color name="holo_blue_light">#4A8B4B</color>
+    <color name="colorText">#023C51</color>
+    <color name="colorBorder">#3F51B5</color>
+    <color name="imgtxtColor">#FDFCFC</color>
+</resources>

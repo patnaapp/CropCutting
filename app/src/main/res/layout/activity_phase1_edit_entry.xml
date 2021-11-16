@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".activity.activity.Phase1EditEntryActivity">
+    <include
+        android:id="@+id/header_new"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        layout="@layout/activity_header" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/header_new"
+        android:layout_above="@+id/footer_phase1" >
+
+        <TextView
+            android:id="@+id/tv_Norecord_phase1"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#FF4B4B"
+            android:textStyle="normal"
+            android:text="No Record Found"
+            android:background="@drawable/bg"
+            android:visibility="visible" />
+
+
+        <ListView
+            android:id="@+id/listviewn_phase1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="3dp"
+            android:clickable="true"
+            android:elevation="10dp"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="1dp"/>
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/footer_phase1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        layout="@layout/footer" />
+
+</RelativeLayout>

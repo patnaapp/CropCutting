@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">CropCutting</string>
+    <string name="title_activity_header">Header</string>
+    <string name="title_activity_footer">Footer</string>
+    <string name="field_required">This field is required</string>
+    <string name="Invalid_Number">Mobile Number is Incorrect</string>
+    <string name="invalid_password">Password is too short</string>
+    <string name="invalid_password_pattern">Password must contains alphabet and numeric characters"</string>
+    <string name="password_not_match">Password did not match</string>
+    <string name="image">image</string>
+    <string name="save">Save</string>
+    <string name="update">update</string>
+    <string name="ignore">ignore</string>
+    <string name="no_internet_connection">no internet connection</string>
+    <string name="turnon_internet">turn on internet</string>
+    <string name="incorrect_password">Password is incorrect</string>
+    <string name="continue_offline">continue_offline</string>
+    <string name="wrong_device_text">wrong device text</string>
+    <string name="ok">ok</string>
+    <string name="enable_internet_for_firsttime">enable_internet_for_firsttime</string>
+</resources>

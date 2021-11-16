@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="in.nic.bih.cropcutting"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <permission android:name="android.permission.READ_PHONE_STATE" />
+    <permission android:name="android.permission.READ_PROFILE" />
+    <permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <permission
+        android:name="android.permission.FLASHLIGHT"
+        android:permissionGroup="android.permission-group.HARDWARE_CONTROLS"
+        android:protectionLevel="normal" />
+    <permission android:name="android.permission.INTERNET" />
+    <permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <permission android:name="android.permission.CAMERA" />
+    <permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission
+        android:name="android.permission.FLASHLIGHT"
+        android:permissionGroup="android.permission-group.HARDWARE_CONTROLS"
+        android:protectionLevel="normal" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name="androidx.multidex.MultiDexApplication"
+        android:allowBackup="false"
+
+        android:hardwareAccelerated="false"
+        android:icon="@drawable/fsyicluncher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".activity.activity.Phase1EditEntryActivity"></activity>
+        <activity android:name=".activity.activity.Phase1HomeActivity" />
+        <activity android:name=".activity.activity.PreHomeActivity" />
+        <activity android:name=".activity.activity.KhesraEntryActivity" />
+        <activity android:name=".activity.activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.activity.Login"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.activity.Home"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.Header"
+            android:screenOrientation="portrait"
+
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.Footer"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.activity.BasicDetails"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.activity.CameraActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.Spinner_text"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.activity.Edit_entry"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <!-- <activity android:name=".activity.Adaptor_edit_entry" /> -->
+
+        <activity
+            android:name=".activity.activity.EditEntryPhase2"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.activity.ViewReoprt"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" /> <!-- <activity android:name=".activity.Adapter_view_report"  /> -->
+        <activity
+            android:name=".activity.activity.SignUpActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.activity.Custom_forgot_password"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.activity.MultiplePhotoActivity"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|screenSize" />
+
+        <meta-data
+            tools:replace="android:value"
+            android:name="com.google.android.gms.version"
+            android:value="7.8" />
+    </application>
+
+</manifest>

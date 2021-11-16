@@ -1,0 +1,331 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/darker_gray">
+
+    <!-- <include
+        android:id="@+id/header"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        layout="@layout/header_view" /> -->
+
+    <include
+        android:id="@+id/footer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        layout="@layout/footer" />
+
+
+    <Button
+        android:id="@+id/btn_Save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/footer"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/orangebuttonshape"
+        android:text="save"
+        android:textColor="@android:color/white" />
+
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:weightSum="2"
+        android:padding="5dp"
+        android:layout_above="@+id/btn_Save"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="1dp"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/Field_Overview"
+                    android:layout_width="184dp"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:onClick="onClick"
+                    android:scaleType="fitXY" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/ic_action_photo"/>
+                    <TextView
+                        android:id="@+id/text_p1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:layout_gravity="center_vertical"
+                        android:text=" Overview Of Field"/>
+                </LinearLayout>
+            </RelativeLayout>
+            <View
+                android:layout_width="0dp"
+                android:layout_weight=".005"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"/>
+            <RelativeLayout
+                android:id="@+id/re_p2"
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_height="fill_parent">
+                <ImageView
+                    android:id="@+id/Crop_Cut_Area"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@null"
+                    android:onClick="onClick"
+                    android:scaleType="fitXY"
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/ic_action_photo"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="During Cutting"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white"/>
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="1dp"
+            android:orientation="horizontal"
+            >
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/During_Threshing"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="50dp"
+                    android:background="@null"
+                    android:onClick="onClick"
+                    android:scaleType="fitXY" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/ic_action_photo"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="During Threshing"/>
+                </LinearLayout>
+            </RelativeLayout>
+            <!--<RelativeLayout-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight=".5"-->
+                <!--android:layout_height="match_parent">-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/During_Cutting"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="fill_parent"-->
+                    <!--android:layout_alignParentEnd="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_marginEnd="0dp"-->
+                    <!--android:layout_marginRight="50dp"-->
+                    <!--android:background="@null"-->
+                    <!--android:onClick="onClick"-->
+                    <!--android:scaleType="fitXY" />-->
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<ImageView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:src="@drawable/ic_action_photo"/>-->
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:padding="5dp"-->
+                        <!--android:gravity="center"-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:text="During Green Weighing"/>-->
+                <!--</LinearLayout>-->
+            <!--</RelativeLayout>-->
+            <View
+                android:layout_width="0dp"
+                android:layout_weight=".005"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"/>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/During_Cutting"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="50dp"
+                    android:background="@null"
+                    android:onClick="onClick"
+                    android:scaleType="fitXY" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/ic_action_photo"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical"
+                        android:text="During Green Weighing"/>
+                </LinearLayout>
+            </RelativeLayout>
+            <!--<RelativeLayout-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight=".5"-->
+                <!--android:layout_height="match_parent">-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/During_Threshing"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="fill_parent"-->
+                    <!--android:layout_alignParentEnd="true"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_marginEnd="0dp"-->
+                    <!--android:layout_marginRight="50dp"-->
+                    <!--android:background="@null"-->
+                    <!--android:onClick="onClick"-->
+                    <!--android:scaleType="fitXY" />-->
+                <!--<LinearLayout-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:orientation="vertical">-->
+
+                    <!--<ImageView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:src="@drawable/ic_action_photo"/>-->
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:padding="5dp"-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:text="During Threshing"/>-->
+                <!--</LinearLayout>-->
+            <!--</RelativeLayout>-->
+            <View
+                android:layout_width="0dp"
+                android:layout_weight=".005"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"/>
+            <RelativeLayout
+                android:id="@+id/re_p3"
+                android:layout_width="0dp"
+                android:layout_weight=".5"
+                android:layout_height="fill_parent">
+                <ImageView
+                    android:id="@+id/During_Weighing"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@null"
+                    android:onClick="onClick"
+                    android:scaleType="fitXY"
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/ic_action_photo"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="5dp"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical"
+                        android:text="During Dry Weighing"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
