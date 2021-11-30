@@ -205,9 +205,9 @@ public class BasicDetails extends AppCompatActivity {
                     && TextUtils.isEmpty(et_bundle8.getText().toString().trim())
             ) {
 
-                int answer = Integer.parseInt(et_bundle1.getText().toString().trim());
+                double answer = Double.parseDouble(et_bundle1.getText().toString().trim());
 
-                Log.e("RESULT", String.valueOf(answer));
+               // Log.e("RESULT", String.valueOf(answer));
                 et_total_bundle_weight.setText(String.valueOf(answer));
             } else if (!TextUtils.isEmpty(et_bundle1.getText().toString().trim())
                     && !TextUtils.isEmpty(et_bundle2.getText().toString().trim())
@@ -218,10 +218,10 @@ public class BasicDetails extends AppCompatActivity {
                     && TextUtils.isEmpty(et_bundle7.getText().toString().trim())
                     && TextUtils.isEmpty(et_bundle8.getText().toString().trim())
             ) {
-                int answer = Integer.parseInt(et_bundle1.getText().toString().trim()) +
-                        Integer.parseInt(et_bundle2.getText().toString().trim());
+                double answer = Double.parseDouble(et_bundle1.getText().toString().trim()) +
+                        Double.parseDouble(et_bundle2.getText().toString().trim());
 
-                Log.e("RESULT", String.valueOf(answer));
+               // Log.e("RESULT", String.valueOf(answer));
                 et_total_bundle_weight.setText(String.valueOf(answer));
             } else if (!TextUtils.isEmpty(et_bundle1.getText().toString().trim())
                     && !TextUtils.isEmpty(et_bundle2.getText().toString().trim())
@@ -232,11 +232,11 @@ public class BasicDetails extends AppCompatActivity {
                     && TextUtils.isEmpty(et_bundle7.getText().toString().trim())
                     && TextUtils.isEmpty(et_bundle8.getText().toString().trim())
             ) {
-                int answer = Integer.parseInt(et_bundle1.getText().toString().trim()) +
-                        Integer.parseInt(et_bundle2.getText().toString().trim()) +
-                        Integer.parseInt(et_bundle3.getText().toString().trim());
+                double answer = Double.parseDouble(et_bundle1.getText().toString().trim()) +
+                        Double.parseDouble(et_bundle2.getText().toString().trim()) +
+                        Double.parseDouble(et_bundle3.getText().toString().trim());
 
-                Log.e("RESULT", String.valueOf(answer));
+               // Log.e("RESULT", String.valueOf(answer));
                 et_total_bundle_weight.setText(String.valueOf(answer));
             } else if (!TextUtils.isEmpty(et_bundle1.getText().toString().trim())
                     && !TextUtils.isEmpty(et_bundle2.getText().toString().trim())
@@ -249,12 +249,12 @@ public class BasicDetails extends AppCompatActivity {
             ) {
 
 
-                int answer = Integer.parseInt(et_bundle1.getText().toString().trim()) +
-                        Integer.parseInt(et_bundle2.getText().toString().trim()) +
-                        Integer.parseInt(et_bundle3.getText().toString().trim()) +
-                        Integer.parseInt(et_bundle4.getText().toString().trim());
+                double answer = Double.parseDouble(et_bundle1.getText().toString().trim()) +
+                        Double.parseDouble(et_bundle2.getText().toString().trim()) +
+                        Double.parseDouble(et_bundle3.getText().toString().trim()) +
+                        Double.parseDouble(et_bundle4.getText().toString().trim());
 
-                Log.e("RESULT", String.valueOf(answer));
+               // Log.e("RESULT", String.valueOf(answer));
                 et_total_bundle_weight.setText(String.valueOf(answer));
             } else if (!TextUtils.isEmpty(et_bundle1.getText().toString().trim())
                     && !TextUtils.isEmpty(et_bundle2.getText().toString().trim())
@@ -267,13 +267,13 @@ public class BasicDetails extends AppCompatActivity {
             ) {
 
 
-                int answer = Integer.parseInt(et_bundle1.getText().toString().trim()) +
-                        Integer.parseInt(et_bundle2.getText().toString().trim()) +
-                        Integer.parseInt(et_bundle3.getText().toString().trim()) +
-                        Integer.parseInt(et_bundle4.getText().toString().trim());
-                Integer.parseInt(et_bundle5.getText().toString().trim());
+                double answer = Double.parseDouble(et_bundle1.getText().toString().trim()) +
+                        Double.parseDouble(et_bundle2.getText().toString().trim()) +
+                        Double.parseDouble(et_bundle3.getText().toString().trim()) +
+                        Double.parseDouble(et_bundle4.getText().toString().trim())+
+                Double.parseDouble(et_bundle5.getText().toString().trim());
 
-                Log.e("RESULT", String.valueOf(answer));
+               // Log.e("RESULT", String.valueOf(answer));
                 et_total_bundle_weight.setText(String.valueOf(answer));
             } else if (!TextUtils.isEmpty(et_bundle1.getText().toString().trim())
                     && !TextUtils.isEmpty(et_bundle2.getText().toString().trim())
@@ -286,14 +286,14 @@ public class BasicDetails extends AppCompatActivity {
             ) {
 
 
-                int answer = Integer.parseInt(et_bundle1.getText().toString().trim()) +
-                        Integer.parseInt(et_bundle2.getText().toString().trim()) +
-                        Integer.parseInt(et_bundle3.getText().toString().trim()) +
-                        Integer.parseInt(et_bundle4.getText().toString().trim());
-                Integer.parseInt(et_bundle5.getText().toString().trim());
-                Integer.parseInt(et_bundle6.getText().toString().trim());
+                double answer = Double.parseDouble(et_bundle1.getText().toString().trim()) +
+                        Double.parseDouble(et_bundle2.getText().toString().trim()) +
+                        Double.parseDouble(et_bundle3.getText().toString().trim()) +
+                        Double.parseDouble(et_bundle4.getText().toString().trim())+
+                Double.parseDouble(et_bundle5.getText().toString().trim())+
+                Double.parseDouble(et_bundle6.getText().toString().trim());
 
-                Log.e("RESULT", String.valueOf(answer));
+               // Log.e("RESULT", String.valueOf(answer));
                 et_total_bundle_weight.setText(String.valueOf(answer));
             } else if (!TextUtils.isEmpty(et_bundle1.getText().toString().trim())
                     && !TextUtils.isEmpty(et_bundle2.getText().toString().trim())
@@ -306,15 +306,15 @@ public class BasicDetails extends AppCompatActivity {
             ) {
 
 
-                int answer = Integer.parseInt(et_bundle1.getText().toString().trim()) +
-                        Integer.parseInt(et_bundle2.getText().toString().trim()) +
-                        Integer.parseInt(et_bundle3.getText().toString().trim()) +
-                        Integer.parseInt(et_bundle4.getText().toString().trim());
-                Integer.parseInt(et_bundle5.getText().toString().trim());
-                Integer.parseInt(et_bundle6.getText().toString().trim());
-                Integer.parseInt(et_bundle7.getText().toString().trim());
+                double answer = Double.parseDouble(et_bundle1.getText().toString().trim()) +
+                        Double.parseDouble(et_bundle2.getText().toString().trim()) +
+                        Double.parseDouble(et_bundle3.getText().toString().trim()) +
+                        Double.parseDouble(et_bundle4.getText().toString().trim())+
+                Double.parseDouble(et_bundle5.getText().toString().trim())+
+                Double.parseDouble(et_bundle6.getText().toString().trim())+
+                Double.parseDouble(et_bundle7.getText().toString().trim());
 
-                Log.e("RESULT", String.valueOf(answer));
+                //Log.e("RESULT", String.valueOf(answer));
                 et_total_bundle_weight.setText(String.valueOf(answer));
             } else if (!TextUtils.isEmpty(et_bundle1.getText().toString().trim())
                     && !TextUtils.isEmpty(et_bundle2.getText().toString().trim())
@@ -327,16 +327,16 @@ public class BasicDetails extends AppCompatActivity {
             ) {
 
 
-                int answer = Integer.parseInt(et_bundle1.getText().toString().trim()) +
-                        Integer.parseInt(et_bundle2.getText().toString().trim()) +
-                        Integer.parseInt(et_bundle3.getText().toString().trim()) +
-                        Integer.parseInt(et_bundle4.getText().toString().trim());
-                Integer.parseInt(et_bundle5.getText().toString().trim());
-                Integer.parseInt(et_bundle6.getText().toString().trim());
-                Integer.parseInt(et_bundle7.getText().toString().trim());
-                Integer.parseInt(et_bundle8.getText().toString().trim());
+                double answer = Double.parseDouble(et_bundle1.getText().toString().trim()) +
+                        Double.parseDouble(et_bundle2.getText().toString().trim()) +
+                        Double.parseDouble(et_bundle3.getText().toString().trim()) +
+                        Double.parseDouble(et_bundle4.getText().toString().trim())+
+                Double.parseDouble(et_bundle5.getText().toString().trim())+
+                Double.parseDouble(et_bundle6.getText().toString().trim())+
+                Double.parseDouble(et_bundle7.getText().toString().trim())+
+                Double.parseDouble(et_bundle8.getText().toString().trim());
 
-                Log.e("RESULT", String.valueOf(answer));
+                //Log.e("RESULT", String.valueOf(answer));
                 et_total_bundle_weight.setText(String.valueOf(answer));
             } else {
                 et_total_bundle_weight.setText("");

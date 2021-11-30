@@ -249,12 +249,12 @@ public class CameraActivity extends Activity {
 
         //mlocManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, (float) 0.01, mlistener);
         mlocManager.requestLocationUpdates(
-                LocationManager.GPS_PROVIDER, 5000, 10, mlistener);
+                LocationManager.GPS_PROVIDER, 1000, 1, mlistener);
         mlocManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, (float) 0.01, mlistener);
         //  mlocManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, (float) 0.01, mlistener);
 
         mlocManager.requestLocationUpdates(
-                LocationManager.NETWORK_PROVIDER, 5000, 10, mlistener);
+                LocationManager.NETWORK_PROVIDER, 1000, 1, mlistener);
 
     }
 
@@ -613,7 +613,7 @@ public class CameraActivity extends Activity {
                     GlobalVariables.glocation = location;
                     updateUILocation(GlobalVariables.glocation);
                     //long elapsedMillis = SystemClock.elapsedRealtime() - chronometer.getBase();
-                    if (location.getAccuracy() > 0 && location.getAccuracy() < 150) {
+                    if (location.getAccuracy() < 200) {
 
 //                        String keypic = getIntent().getStringExtra("KEY_PIC");
 //                        if(getIntent().getStringExtra("KEY_PIC").equalsIgnoreCase("5"))
@@ -746,7 +746,8 @@ public class CameraActivity extends Activity {
 
 
     @Override
-    public void onDestroy() {
+    public void onDestroy()
+      {
         super.onDestroy();
 
         Runtime.getRuntime().gc();
