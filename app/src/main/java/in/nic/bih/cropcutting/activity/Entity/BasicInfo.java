@@ -80,6 +80,10 @@ public class BasicInfo implements KvmSerializable {
 
     private String pod_wt_plucking;
     private String dryFiber_weight;
+    private String noof_Lines;
+    private String length_of_selected_lines;
+    private String field_type_id;
+    private String field_type_name;
 
     public String getPod_wt_plucking() {
         return pod_wt_plucking;
@@ -799,5 +803,37 @@ public class BasicInfo implements KvmSerializable {
 
     public void setDryFiber_weight(String dryFiber_weight) {
         this.dryFiber_weight = dryFiber_weight;
+    }
+
+    public String getNoof_Lines() {
+        return noof_Lines;
+    }
+
+    public void setNoof_Lines(String noof_Lines) {
+        this.noof_Lines = noof_Lines;
+    }
+
+    public String getLength_of_selected_lines() {
+        return length_of_selected_lines;
+    }
+
+    public void setLength_of_selected_lines(String length_of_selected_lines) {
+        this.length_of_selected_lines = length_of_selected_lines;
+    }
+
+    public String getField_type_id() {
+        return field_type_id;
+    }
+
+    public void setField_type_id(String field_type_id) {
+        this.field_type_id = field_type_id;
+    }
+
+    public String getField_type_name() {
+        return field_type_name;
+    }
+
+    public void setField_type_name(String field_type_name) {
+        this.field_type_name = field_type_name;
     }
 }

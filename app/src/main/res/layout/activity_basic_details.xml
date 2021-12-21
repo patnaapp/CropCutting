@@ -1805,90 +1805,254 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="fill_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp">
+                android:id="@+id/ll_type_of_fields"
+                android:orientation="horizontal"
+                android:padding="5dp"
+                android:weightSum="1">
 
-                <TextView
-                    android:id="@+id/tv_Length_of_field"
-                    android:layout_width="wrap_content"
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Length Of Field(in Steps)"
-                    android:textColor="#000000"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Type Of Field "
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+                    <Spinner
+                        android:id="@+id/spn_type_of_field"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/spinner_bg"
+                        android:imeOptions="actionUnspecified"
+                        android:textAppearance="?android:textAppearanceSmall"
+                        android:textColor="#43D305" />
+
+
+                </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="fill_parent"
+                android:id="@+id/ll_no_of_Lines"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <RelativeLayout
+                <LinearLayout
+                    android:id="@+id/lin_no_of_Lines"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content">
-
-
-                    <EditText
-                        android:id="@+id/et_length_of_field"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/edittext_style"
-                        android:hint="Enter Length Of Field(in Steps)"
-                        android:inputType="phone"
-                        android:maxLength="30"
-                        android:padding="10dp"
-                        android:textColor="#000000"
-                        android:textColorHint="@android:color/darker_gray" />
-
-                </RelativeLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp">
-
-                <TextView
-                    android:id="@+id/tv_breath_of_field"
-                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Breath Of Field(in Steps)"
-                    android:textColor="#000000"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
+                    android:layout_marginBottom="3dp">
 
+                    <TextView
+                        android:id="@+id/tv_no_of_Lines"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No of Lines"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <EditText
+                            android:id="@+id/et_no_of_Lines"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_style"
+                            android:hint="No of Lines"
+                            android:inputType="phone"
+                            android:maxLength="30"
+                            android:padding="10dp"
+                            android:textColor="#000000"
+                            android:textColorHint="@android:color/darker_gray" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="fill_parent"
+                android:id="@+id/ll_length_of_Lines"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <RelativeLayout
+                <LinearLayout
+                    android:id="@+id/lin_length_of_Lines"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
 
-
-                    <EditText
-                        android:id="@+id/et_breath_of_field"
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/tv_length_of_Lines"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/edittext_style"
-                        android:hint="Enter Breath Of Field(in Steps)"
-                        android:inputType="phone"
-                        android:maxLength="30"
-                        android:padding="10dp"
+                        android:text="Length of Selected Lines (In Foot Step)"
                         android:textColor="#000000"
-                        android:textColorHint="@android:color/darker_gray" />
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
 
-                </RelativeLayout>
+
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <EditText
+                            android:id="@+id/et_length_Lines"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_style"
+                            android:hint="Length of Selected Line"
+                            android:inputType="phone"
+                            android:maxLength="30"
+                            android:padding="10dp"
+                            android:textColor="#000000"
+                            android:textColorHint="@android:color/darker_gray" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ll_length_ofField"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
+
+                    <TextView
+                        android:id="@+id/tv_Length_of_field"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Length Of Field(in Steps)"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <EditText
+                            android:id="@+id/et_length_of_field"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_style"
+                            android:hint="Enter Length Of Field(in Steps)"
+                            android:inputType="phone"
+                            android:maxLength="30"
+                            android:padding="10dp"
+                            android:textColor="#000000"
+                            android:textColorHint="@android:color/darker_gray" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ll_breadth_ofField"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
+
+                    <TextView
+                        android:id="@+id/tv_breath_of_field"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Breath Of Field(in Steps)"
+                        android:textColor="#000000"
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <EditText
+                            android:id="@+id/et_breath_of_field"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_style"
+                            android:hint="Enter Breath Of Field(in Steps)"
+                            android:inputType="phone"
+                            android:maxLength="30"
+                            android:padding="10dp"
+                            android:textColor="#000000"
+                            android:textColorHint="@android:color/darker_gray" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -1901,6 +2065,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:id="@+id/ll_type_of_land"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -2024,94 +2189,94 @@
             </LinearLayout>
 
 
-                <EditText
-                    android:id="@+id/et_bundle1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edittext_style"
-                    android:hint="Bundle 1"
-                    android:inputType="phone"
-                    android:maxLength="30"
-                    android:padding="10dp"
-                    android:textColor="#000000"
-                    android:textColorHint="@android:color/darker_gray" />
-                <EditText
-                    android:id="@+id/et_bundle2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edittext_style"
-                    android:hint="Bundle 2"
-                    android:inputType="phone"
-                    android:maxLength="30"
-                    android:padding="10dp"
-                    android:textColor="#000000"
-                    android:textColorHint="@android:color/darker_gray" />
-                <EditText
-                    android:id="@+id/et_bundle3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edittext_style"
-                    android:hint="Bundle 3"
-                    android:inputType="phone"
-                    android:maxLength="30"
-                    android:padding="10dp"
-                    android:textColor="#000000"
-                    android:textColorHint="@android:color/darker_gray" />
-                <EditText
-                    android:id="@+id/et_bundle4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edittext_style"
-                    android:hint="Bundle 4"
-                    android:inputType="phone"
-                    android:maxLength="30"
-                    android:padding="10dp"
-                    android:textColor="#000000"
-                    android:textColorHint="@android:color/darker_gray" />
-                <EditText
-                    android:id="@+id/et_bundle5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edittext_style"
-                    android:hint="Bundle 5"
-                    android:inputType="phone"
-                    android:maxLength="30"
-                    android:padding="10dp"
-                    android:textColor="#000000"
-                    android:textColorHint="@android:color/darker_gray" />
-                <EditText
-                    android:id="@+id/et_bundle6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edittext_style"
-                    android:hint="Bundle 6"
-                    android:inputType="phone"
-                    android:maxLength="30"
-                    android:padding="10dp"
-                    android:textColor="#000000"
-                    android:textColorHint="@android:color/darker_gray" />
-                <EditText
-                    android:id="@+id/et_bundle7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edittext_style"
-                    android:hint="Bundle 7"
-                    android:inputType="phone"
-                    android:maxLength="30"
-                    android:padding="10dp"
-                    android:textColor="#000000"
-                    android:textColorHint="@android:color/darker_gray" />
-                <EditText
-                    android:id="@+id/et_bundle8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/edittext_style"
-                    android:hint="Bundle 8"
-                    android:inputType="phone"
-                    android:maxLength="30"
-                    android:padding="10dp"
-                    android:textColor="#000000"
-                    android:textColorHint="@android:color/darker_gray" />
+            <EditText
+                android:id="@+id/et_bundle1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_style"
+                android:hint="Bundle 1"
+                android:inputType="phone"
+                android:maxLength="30"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@android:color/darker_gray" />
+            <EditText
+                android:id="@+id/et_bundle2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_style"
+                android:hint="Bundle 2"
+                android:inputType="phone"
+                android:maxLength="30"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@android:color/darker_gray" />
+            <EditText
+                android:id="@+id/et_bundle3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_style"
+                android:hint="Bundle 3"
+                android:inputType="phone"
+                android:maxLength="30"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@android:color/darker_gray" />
+            <EditText
+                android:id="@+id/et_bundle4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_style"
+                android:hint="Bundle 4"
+                android:inputType="phone"
+                android:maxLength="30"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@android:color/darker_gray" />
+            <EditText
+                android:id="@+id/et_bundle5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_style"
+                android:hint="Bundle 5"
+                android:inputType="phone"
+                android:maxLength="30"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@android:color/darker_gray" />
+            <EditText
+                android:id="@+id/et_bundle6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_style"
+                android:hint="Bundle 6"
+                android:inputType="phone"
+                android:maxLength="30"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@android:color/darker_gray" />
+            <EditText
+                android:id="@+id/et_bundle7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_style"
+                android:hint="Bundle 7"
+                android:inputType="phone"
+                android:maxLength="30"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@android:color/darker_gray" />
+            <EditText
+                android:id="@+id/et_bundle8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edittext_style"
+                android:hint="Bundle 8"
+                android:inputType="phone"
+                android:maxLength="30"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="@android:color/darker_gray" />
 
 
 
@@ -2148,53 +2313,53 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
-            <LinearLayout
-                android:id="@+id/lin_total_bundle_weight"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="3dp">
-
-                <TextView
-                    android:id="@+id/tv_total_bundle_weight"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Total Weight of Bundle(in Kg)"
-                    android:textColor="#000000"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <RelativeLayout
+                <LinearLayout
+                    android:id="@+id/lin_total_bundle_weight"
                     android:layout_width="fill_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="3dp">
 
-
-                    <EditText
-                        android:id="@+id/et_total_bundle_weight"
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:id="@+id/tv_total_bundle_weight"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/edittext_style"
-                        android:hint="Total Weight of Bundle(in Kg)"
-                        android:inputType="phone"
-                        android:maxLength="30"
-                        android:padding="10dp"
+                        android:text="Total Weight of Bundle(in Kg)"
                         android:textColor="#000000"
-                        android:textColorHint="@android:color/darker_gray" />
+                        android:textSize="15dp"
+                        android:textStyle="bold" />
 
 
-                </RelativeLayout>
+                </LinearLayout>
 
 
-            </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+
+                        <EditText
+                            android:id="@+id/et_total_bundle_weight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edittext_style"
+                            android:hint="Total Weight of Bundle(in Kg)"
+                            android:inputType="phone"
+                            android:maxLength="30"
+                            android:padding="10dp"
+                            android:textColor="#000000"
+                            android:textColorHint="@android:color/darker_gray" />
+
+
+                    </RelativeLayout>
+
+
+                </LinearLayout>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -2206,59 +2371,62 @@
                 android:paddingRight="10dp"
                 android:paddingBottom="5dp">
 
+
+
+
                 <LinearLayout
                     android:id="@+id/ll_green_wight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/lin_greenWeight"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="3dp">
-
-                    <TextView
-                        android:id="@+id/tv_green_weight"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Green weight(in Kg)"
-                        android:textColor="#000000"
-                        android:textSize="15dp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
+                    <LinearLayout
+                        android:id="@+id/lin_greenWeight"
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp">
 
-
-                        <EditText
-                            android:id="@+id/et_green_weight"
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/tv_green_weight"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/edittext_style"
-                            android:hint="Green weight(in Kg)"
-                            android:inputType="phone"
-                            android:maxLength="30"
-                            android:padding="10dp"
+                            android:text="Green weight(in Kg)"
                             android:textColor="#000000"
-                            android:textColorHint="@android:color/darker_gray" />
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
 
 
-                    </RelativeLayout>
+                    </LinearLayout>
 
 
-                </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <EditText
+                                android:id="@+id/et_green_weight"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/edittext_style"
+                                android:hint=""
+                                android:inputType="phone"
+                                android:maxLength="30"
+                                android:padding="10dp"
+                                android:textColor="#000000"
+                                android:textColorHint="@android:color/darker_gray" />
+
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -2268,53 +2436,53 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/lin_podweightafter_plucking"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="3dp">
-
-                    <TextView
-                        android:id="@+id/tv_podweightafter_pluckingt"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Weight of Pod(Chhemmi) after plucking(in Kg)"
-                        android:textColor="#000000"
-                        android:textSize="15dp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
+                    <LinearLayout
+                        android:id="@+id/lin_podweightafter_plucking"
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp">
 
-
-                        <EditText
-                            android:id="@+id/et_podweightafter_plucking"
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/tv_podweightafter_pluckingt"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/edittext_style"
-                            android:hint="Weight of green dana after plucking(in Kg)"
-                            android:inputType="phone"
-                            android:maxLength="30"
-                            android:padding="10dp"
+                            android:text="Weight of Pod(Chhemmi) after plucking(in Kg)"
                             android:textColor="#000000"
-                            android:textColorHint="@android:color/darker_gray" />
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
 
 
-                    </RelativeLayout>
+                    </LinearLayout>
 
 
-                </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <EditText
+                                android:id="@+id/et_podweightafter_plucking"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/edittext_style"
+                                android:hint="Weight of green dana after plucking(in Kg)"
+                                android:inputType="phone"
+                                android:maxLength="30"
+                                android:padding="10dp"
+                                android:textColor="#000000"
+                                android:textColorHint="@android:color/darker_gray" />
+
+
+                        </RelativeLayout>
+
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -2539,49 +2707,49 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-                <LinearLayout
-                    android:id="@+id/lin_dryWeight_fiber"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="3dp">
-
-                    <TextView
-                        android:id="@+id/tv_dry_fiber_weight"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Weight of Dry Fiber(in Kg)"
-                        android:textColor="#000000"
-                        android:textSize="15dp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <RelativeLayout
+                    <LinearLayout
+                        android:id="@+id/lin_dryWeight_fiber"
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp">
 
-                        <EditText
-                            android:id="@+id/et_dry_weight_fiber"
-                            android:layout_width="match_parent"
+                        <TextView
+                            android:id="@+id/tv_dry_fiber_weight"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/edittext_style"
-                            android:hint="Enter Weight Of Fiber(in Kg)"
-                            android:inputType="phone"
-                            android:maxLength="30"
-                            android:padding="10dp"
+                            android:text="Weight of Dry Fiber(in Kg)"
                             android:textColor="#000000"
-                            android:textColorHint="@android:color/darker_gray" />
+                            android:textSize="15dp"
+                            android:textStyle="bold" />
 
-                    </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content">
+
+                            <EditText
+                                android:id="@+id/et_dry_weight_fiber"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/edittext_style"
+                                android:hint="Enter Weight Of Fiber(in Kg)"
+                                android:inputType="phone"
+                                android:maxLength="30"
+                                android:padding="10dp"
+                                android:textColor="#000000"
+                                android:textColorHint="@android:color/darker_gray" />
+
+                        </RelativeLayout>
 
 
-                </LinearLayout>
+                    </LinearLayout>
 
                 </LinearLayout>
 

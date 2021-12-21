@@ -109,7 +109,8 @@ public class ViewReoprt extends AppCompatActivity {
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+            public void onNothingSelected(AdapterView<?> parent)
+            {
                 // TODO Auto-generated method stub
 
             }

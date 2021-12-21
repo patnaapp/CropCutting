@@ -179,13 +179,20 @@ public class BasicDetails extends AppCompatActivity {
     LinearLayout ll_typeList, ll_dry_fiber_wt, ll_bundles, ll_weightBunldes, lin_weightofBundles;
     String spn_type_val = "", st_spn_type_id = "", st_spn_type_nm = "";
     String noOfBunlesArray[] = {"Select", "1", "2", "3", "4", "5", "6", "7", "8"};
-    String noOfBunles = "";
+    String typeofFieldArray[] = {"Select", "Plain", "Lines"};
+    String noOfBunles = "",type_of_field="",type_of_field_id="";
     EditText et_bundle1, et_bundle2, et_bundle3, et_bundle4, et_bundle5, et_bundle6, et_bundle7, et_bundle8, et_total_bundle_weight;
     LinearLayout ll_podweightafter_plucking, ll_podweightafter_threshing, ll_maizeweightafter_plucking, ll_maizeweightafter_threshing, ll_total_wt,ll_green_wight,ll_irrigation_source;
     TextView tv_dry_weight;
     EditText et_podweightafter_plucking, et_podweightafter_threshing, et_maizeweightafter_plucking, et_maizeweightafter_threshing, et_dry_weight_fiber;
     EditText et_green_weight_of_daana;
     Double total_sum_bundle = 0.0;
+    Spinner spn_type_of_field;
+    LinearLayout ll_type_of_fields,ll_type_of_land,ll_length_ofField,ll_breadth_ofField,ll_no_of_Lines,ll_length_of_Lines;
+    EditText et_no_of_Lines,et_length_Lines;
+
+
+
     TextWatcher textWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -207,7 +214,7 @@ public class BasicDetails extends AppCompatActivity {
 
                 double answer = Double.parseDouble(et_bundle1.getText().toString().trim());
 
-               // Log.e("RESULT", String.valueOf(answer));
+                // Log.e("RESULT", String.valueOf(answer));
                 et_total_bundle_weight.setText(String.valueOf(answer));
             } else if (!TextUtils.isEmpty(et_bundle1.getText().toString().trim())
                     && !TextUtils.isEmpty(et_bundle2.getText().toString().trim())
@@ -221,7 +228,7 @@ public class BasicDetails extends AppCompatActivity {
                 double answer = Double.parseDouble(et_bundle1.getText().toString().trim()) +
                         Double.parseDouble(et_bundle2.getText().toString().trim());
 
-               // Log.e("RESULT", String.valueOf(answer));
+                // Log.e("RESULT", String.valueOf(answer));
                 et_total_bundle_weight.setText(String.valueOf(answer));
             } else if (!TextUtils.isEmpty(et_bundle1.getText().toString().trim())
                     && !TextUtils.isEmpty(et_bundle2.getText().toString().trim())
@@ -236,7 +243,7 @@ public class BasicDetails extends AppCompatActivity {
                         Double.parseDouble(et_bundle2.getText().toString().trim()) +
                         Double.parseDouble(et_bundle3.getText().toString().trim());
 
-               // Log.e("RESULT", String.valueOf(answer));
+                // Log.e("RESULT", String.valueOf(answer));
                 et_total_bundle_weight.setText(String.valueOf(answer));
             } else if (!TextUtils.isEmpty(et_bundle1.getText().toString().trim())
                     && !TextUtils.isEmpty(et_bundle2.getText().toString().trim())
@@ -254,7 +261,7 @@ public class BasicDetails extends AppCompatActivity {
                         Double.parseDouble(et_bundle3.getText().toString().trim()) +
                         Double.parseDouble(et_bundle4.getText().toString().trim());
 
-               // Log.e("RESULT", String.valueOf(answer));
+                // Log.e("RESULT", String.valueOf(answer));
                 et_total_bundle_weight.setText(String.valueOf(answer));
             } else if (!TextUtils.isEmpty(et_bundle1.getText().toString().trim())
                     && !TextUtils.isEmpty(et_bundle2.getText().toString().trim())
@@ -271,9 +278,9 @@ public class BasicDetails extends AppCompatActivity {
                         Double.parseDouble(et_bundle2.getText().toString().trim()) +
                         Double.parseDouble(et_bundle3.getText().toString().trim()) +
                         Double.parseDouble(et_bundle4.getText().toString().trim())+
-                Double.parseDouble(et_bundle5.getText().toString().trim());
+                        Double.parseDouble(et_bundle5.getText().toString().trim());
 
-               // Log.e("RESULT", String.valueOf(answer));
+                // Log.e("RESULT", String.valueOf(answer));
                 et_total_bundle_weight.setText(String.valueOf(answer));
             } else if (!TextUtils.isEmpty(et_bundle1.getText().toString().trim())
                     && !TextUtils.isEmpty(et_bundle2.getText().toString().trim())
@@ -290,10 +297,10 @@ public class BasicDetails extends AppCompatActivity {
                         Double.parseDouble(et_bundle2.getText().toString().trim()) +
                         Double.parseDouble(et_bundle3.getText().toString().trim()) +
                         Double.parseDouble(et_bundle4.getText().toString().trim())+
-                Double.parseDouble(et_bundle5.getText().toString().trim())+
-                Double.parseDouble(et_bundle6.getText().toString().trim());
+                        Double.parseDouble(et_bundle5.getText().toString().trim())+
+                        Double.parseDouble(et_bundle6.getText().toString().trim());
 
-               // Log.e("RESULT", String.valueOf(answer));
+                // Log.e("RESULT", String.valueOf(answer));
                 et_total_bundle_weight.setText(String.valueOf(answer));
             } else if (!TextUtils.isEmpty(et_bundle1.getText().toString().trim())
                     && !TextUtils.isEmpty(et_bundle2.getText().toString().trim())
@@ -310,9 +317,9 @@ public class BasicDetails extends AppCompatActivity {
                         Double.parseDouble(et_bundle2.getText().toString().trim()) +
                         Double.parseDouble(et_bundle3.getText().toString().trim()) +
                         Double.parseDouble(et_bundle4.getText().toString().trim())+
-                Double.parseDouble(et_bundle5.getText().toString().trim())+
-                Double.parseDouble(et_bundle6.getText().toString().trim())+
-                Double.parseDouble(et_bundle7.getText().toString().trim());
+                        Double.parseDouble(et_bundle5.getText().toString().trim())+
+                        Double.parseDouble(et_bundle6.getText().toString().trim())+
+                        Double.parseDouble(et_bundle7.getText().toString().trim());
 
                 //Log.e("RESULT", String.valueOf(answer));
                 et_total_bundle_weight.setText(String.valueOf(answer));
@@ -331,10 +338,10 @@ public class BasicDetails extends AppCompatActivity {
                         Double.parseDouble(et_bundle2.getText().toString().trim()) +
                         Double.parseDouble(et_bundle3.getText().toString().trim()) +
                         Double.parseDouble(et_bundle4.getText().toString().trim())+
-                Double.parseDouble(et_bundle5.getText().toString().trim())+
-                Double.parseDouble(et_bundle6.getText().toString().trim())+
-                Double.parseDouble(et_bundle7.getText().toString().trim())+
-                Double.parseDouble(et_bundle8.getText().toString().trim());
+                        Double.parseDouble(et_bundle5.getText().toString().trim())+
+                        Double.parseDouble(et_bundle6.getText().toString().trim())+
+                        Double.parseDouble(et_bundle7.getText().toString().trim())+
+                        Double.parseDouble(et_bundle8.getText().toString().trim());
 
                 //Log.e("RESULT", String.valueOf(answer));
                 et_total_bundle_weight.setText(String.valueOf(answer));
@@ -396,6 +403,10 @@ public class BasicDetails extends AppCompatActivity {
         ArrayAdapter adaptor = new ArrayAdapter(this, android.R.layout.simple_spinner_item, noOfBunlesArray);
         adaptor.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spn_bundles.setAdapter(adaptor);
+
+        ArrayAdapter adaptor1 = new ArrayAdapter(this, android.R.layout.simple_spinner_item, typeofFieldArray);
+        adaptor1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spn_type_of_field.setAdapter(adaptor1);
 
         et_farmername.setEnabled(false);
         et_village.setEnabled(false);
@@ -516,6 +527,7 @@ public class BasicDetails extends AppCompatActivity {
                     }
                     if (st_spn_season_id.equals("1")) {
                         et_shape_of_area.setText("Rectangle");
+
                     }
 
                 } else {
@@ -578,7 +590,52 @@ public class BasicDetails extends AppCompatActivity {
                         tv_dry_weight.setHint("Enter Dry Weight(in Kg)");
                         lin_order_of_experiment.setVisibility(View.VISIBLE);
                         ll_irrigation_source.setVisibility(View.VISIBLE);
-                    } else if (st_spn_season_id.equals("1") && st_spn_croptyp.equals("18")) {
+                        ll_type_of_fields.setVisibility(View.GONE);
+
+                        ll_type_of_land.setVisibility(View.VISIBLE);
+                        ll_length_ofField.setVisibility(View.VISIBLE);
+                        ll_breadth_ofField.setVisibility(View.VISIBLE);
+
+
+                    }
+
+                    if (st_spn_season_id.equals("1") && st_spn_croptyp.equals("23")) {
+                        lin_geenWeight.setVisibility(View.VISIBLE);
+                        et_greenWeight.setVisibility(View.VISIBLE);
+                        et_DryWeight.setVisibility(View.GONE);
+                        lin_noOfMaize.setVisibility(View.GONE);
+                        lin_weightOFMaize.setVisibility(View.GONE);
+                        lin_greenweightOfMaize.setVisibility(View.GONE);
+                        lin_dryWeightOfMaize.setVisibility(View.GONE);
+                        et_No_of_baal.setVisibility(View.GONE);
+                        et_weight_of_baal.setVisibility(View.GONE);
+                        et_green_weight_of_dana.setVisibility(View.GONE);
+                        et_dry_weight_of_dana.setVisibility(View.GONE);
+                        ll_typeList.setVisibility(View.GONE);
+                        ll_dry_fiber_wt.setVisibility(View.GONE);
+                        et_shape_of_area.setText("Square");
+                        tv_green_weight.setText("Weight of Potato without soil");
+
+                        ll_podweightafter_plucking.setVisibility(View.GONE);
+                        ll_podweightafter_threshing.setVisibility(View.GONE);
+                        ll_maizeweightafter_plucking.setVisibility(View.GONE);
+                        ll_maizeweightafter_threshing.setVisibility(View.GONE);
+                        ll_green_wight.setVisibility(View.VISIBLE);
+                        tv_dry_weight.setText("Dry Weight(in Kg)");
+                        tv_dry_weight.setHint("Enter Dry Weight(in Kg)");
+                        lin_dryWeight.setVisibility(View.GONE);
+                        ll_type_of_land.setVisibility(View.GONE);
+                        ll_length_ofField.setVisibility(View.GONE);
+                        ll_breadth_ofField.setVisibility(View.GONE);
+                        lin_order_of_experiment.setVisibility(View.GONE);
+                        ll_irrigation_source.setVisibility(View.VISIBLE);
+                        ll_type_of_fields.setVisibility(View.VISIBLE);
+
+//                        ll_length_ofField.setVisibility(View.VISIBLE);
+//                        ll_breadth_ofField.setVisibility(View.VISIBLE);
+
+                    }
+                    else if (st_spn_season_id.equals("1") && st_spn_croptyp.equals("18")) {
                         lin_geenWeight.setVisibility(View.GONE);
                         lin_dryWeight.setVisibility(View.VISIBLE);
                         et_greenWeight.setVisibility(View.GONE);
@@ -604,6 +661,12 @@ public class BasicDetails extends AppCompatActivity {
                         ll_green_wight.setVisibility(View.VISIBLE);
                         lin_order_of_experiment.setVisibility(View.GONE);
                         ll_irrigation_source.setVisibility(View.VISIBLE);
+                        ll_type_of_fields.setVisibility(View.GONE);
+
+                        ll_type_of_land.setVisibility(View.VISIBLE);
+                        ll_length_ofField.setVisibility(View.VISIBLE);
+                        ll_breadth_ofField.setVisibility(View.VISIBLE);
+
 
                     } else if (st_spn_season_id.equals("1") && (st_spn_croptyp.equals("17"))) {
                         lin_geenWeight.setVisibility(View.GONE);
@@ -631,6 +694,11 @@ public class BasicDetails extends AppCompatActivity {
                         ll_green_wight.setVisibility(View.VISIBLE);
                         lin_order_of_experiment.setVisibility(View.GONE);
                         ll_irrigation_source.setVisibility(View.VISIBLE);
+                        ll_type_of_fields.setVisibility(View.GONE);
+
+                        ll_type_of_land.setVisibility(View.VISIBLE);
+                        ll_length_ofField.setVisibility(View.VISIBLE);
+                        ll_breadth_ofField.setVisibility(View.VISIBLE);
 
                     } else if (st_spn_season_id.equals("1") && st_spn_croptyp.equals("2")) {
                         lin_noOfMaize.setVisibility(View.VISIBLE);
@@ -658,6 +726,12 @@ public class BasicDetails extends AppCompatActivity {
                         ll_green_wight.setVisibility(View.VISIBLE);
                         lin_order_of_experiment.setVisibility(View.VISIBLE);
                         ll_irrigation_source.setVisibility(View.VISIBLE);
+                        ll_type_of_fields.setVisibility(View.GONE);
+
+                        ll_type_of_land.setVisibility(View.VISIBLE);
+                        ll_length_ofField.setVisibility(View.VISIBLE);
+                        ll_breadth_ofField.setVisibility(View.VISIBLE);
+
                     } else if (st_spn_season_id.equals("2") && st_spn_croptyp.equals("3")) {
                         lin_geenWeight.setVisibility(View.VISIBLE);
                         lin_dryWeight.setVisibility(View.VISIBLE);
@@ -675,6 +749,7 @@ public class BasicDetails extends AppCompatActivity {
                         ll_typeList.setVisibility(View.GONE);
                         et_shape_of_area.setText("Rectangle");
                         tv_green_weight.setText("Green Weight(In kg)");
+
                         ll_dry_fiber_wt.setVisibility(View.GONE);
                         ll_bundles.setVisibility(View.GONE);
                         ll_podweightafter_plucking.setVisibility(View.GONE);
@@ -686,6 +761,10 @@ public class BasicDetails extends AppCompatActivity {
                         ll_green_wight.setVisibility(View.VISIBLE);
                         lin_order_of_experiment.setVisibility(View.VISIBLE);
                         ll_irrigation_source.setVisibility(View.VISIBLE);
+                        ll_type_of_fields.setVisibility(View.GONE);
+
+                        ll_type_of_land.setVisibility(View.VISIBLE);
+                        ll_length_ofField.setVisibility(View.VISIBLE);
                     } else if (st_spn_season_id.equals("2") && st_spn_croptyp.equals("4")) {
                         lin_noOfMaize.setVisibility(View.VISIBLE);
                         lin_weightOFMaize.setVisibility(View.VISIBLE);
@@ -712,6 +791,10 @@ public class BasicDetails extends AppCompatActivity {
                         ll_green_wight.setVisibility(View.VISIBLE);
                         lin_order_of_experiment.setVisibility(View.VISIBLE);
                         ll_irrigation_source.setVisibility(View.VISIBLE);
+                        ll_type_of_fields.setVisibility(View.GONE);
+
+                        ll_type_of_land.setVisibility(View.VISIBLE);
+                        ll_length_ofField.setVisibility(View.VISIBLE);
                     } else if (st_spn_season_id.equals("2") && (st_spn_croptyp.equals("5") || st_spn_croptyp.equals("21") || st_spn_croptyp.equals("22"))) {
                         lin_geenWeight.setVisibility(View.VISIBLE);
                         lin_dryWeight.setVisibility(View.VISIBLE);
@@ -739,6 +822,10 @@ public class BasicDetails extends AppCompatActivity {
                         tv_dry_weight.setHint("Enter Dry Weight(in Kg)");
                         ll_green_wight.setVisibility(View.VISIBLE);
                         ll_irrigation_source.setVisibility(View.VISIBLE);
+                        ll_type_of_fields.setVisibility(View.GONE);
+
+                        ll_type_of_land.setVisibility(View.VISIBLE);
+                        ll_length_ofField.setVisibility(View.VISIBLE);
 
                     } else if (st_spn_season_id.equals("2") && st_spn_croptyp.equals("11")) {
                         lin_geenWeight.setVisibility(View.VISIBLE);
@@ -767,6 +854,10 @@ public class BasicDetails extends AppCompatActivity {
                         tv_dry_weight.setHint("Enter Dry Weight(in Kg)");
                         ll_green_wight.setVisibility(View.VISIBLE);
                         ll_irrigation_source.setVisibility(View.VISIBLE);
+                        ll_type_of_fields.setVisibility(View.GONE);
+
+                        ll_type_of_land.setVisibility(View.VISIBLE);
+                        ll_length_ofField.setVisibility(View.VISIBLE);
 
                     } else if (st_spn_season_id.equals("2") && st_spn_croptyp.equals("6")) {
                         lin_geenWeight.setVisibility(View.VISIBLE);
@@ -795,6 +886,11 @@ public class BasicDetails extends AppCompatActivity {
                         tv_dry_weight.setHint("Enter Dry Weight(in Kg)");
                         ll_green_wight.setVisibility(View.VISIBLE);
                         ll_irrigation_source.setVisibility(View.VISIBLE);
+                        ll_type_of_fields.setVisibility(View.GONE);
+
+                        ll_type_of_land.setVisibility(View.VISIBLE);
+                        ll_length_ofField.setVisibility(View.VISIBLE);
+
                     } else if (st_spn_season_id.equals("2") && st_spn_croptyp.equals("7")) {
                         lin_quantity_of_used_seed.setVisibility(View.GONE);
                         lin_source_of_seed.setVisibility(View.GONE);
@@ -824,6 +920,10 @@ public class BasicDetails extends AppCompatActivity {
                         tv_dry_weight.setHint("Enter Dry Weight(in Kg)");
                         ll_green_wight.setVisibility(View.VISIBLE);
                         ll_irrigation_source.setVisibility(View.VISIBLE);
+                        ll_type_of_fields.setVisibility(View.GONE);
+
+                        ll_type_of_land.setVisibility(View.VISIBLE);
+                        ll_length_ofField.setVisibility(View.VISIBLE);
 
                     } else if (st_spn_season_id.equals("2") && st_spn_croptyp.equals("8")) {
                         lin_quantity_of_used_seed.setVisibility(View.GONE);
@@ -843,6 +943,7 @@ public class BasicDetails extends AppCompatActivity {
                         et_greenWeight.setVisibility(View.VISIBLE);
                         et_shape_of_area.setText("Square");
                         tv_green_weight.setText("Weight of Potato without soil");
+
                         ll_typeList.setVisibility(View.GONE);
                         ll_dry_fiber_wt.setVisibility(View.GONE);
                         ll_bundles.setVisibility(View.GONE);
@@ -854,6 +955,13 @@ public class BasicDetails extends AppCompatActivity {
                         tv_dry_weight.setHint("Enter Dry Weight(in Kg)");
                         ll_green_wight.setVisibility(View.VISIBLE);
                         ll_irrigation_source.setVisibility(View.VISIBLE);
+                        ll_type_of_fields.setVisibility(View.GONE);
+                        ll_type_of_land.setVisibility(View.GONE);
+                        ll_length_ofField.setVisibility(View.GONE);
+                        ll_breadth_ofField.setVisibility(View.GONE);
+
+                        ll_irrigation_source.setVisibility(View.VISIBLE);
+                        ll_type_of_fields.setVisibility(View.VISIBLE);
 
                     } else if (st_spn_season_id.equals("1") && ((st_spn_croptyp.equals("12")))) {
                         lin_geenWeight.setVisibility(View.VISIBLE);
@@ -882,6 +990,11 @@ public class BasicDetails extends AppCompatActivity {
                         tv_dry_weight.setHint("Enter Dry Weight(in Kg)");
                         ll_green_wight.setVisibility(View.VISIBLE);
                         ll_irrigation_source.setVisibility(View.VISIBLE);
+                        ll_type_of_fields.setVisibility(View.GONE);
+
+                        ll_type_of_land.setVisibility(View.VISIBLE);
+                        ll_length_ofField.setVisibility(View.VISIBLE);
+
                     } else if (st_spn_season_id.equals("1") && ((st_spn_croptyp.equals("19")) || (st_spn_croptyp.equals("20")))) {
 
                         ll_irrigation_source.setVisibility(View.VISIBLE);
@@ -910,6 +1023,10 @@ public class BasicDetails extends AppCompatActivity {
                         ll_maizeweightafter_threshing.setVisibility(View.GONE);
                         tv_dry_weight.setText("Dry Weight(in Kg)");
                         tv_dry_weight.setHint("Enter Dry Weight(in Kg)");
+                        ll_type_of_fields.setVisibility(View.GONE);
+
+                        ll_type_of_land.setVisibility(View.VISIBLE);
+                        ll_length_ofField.setVisibility(View.VISIBLE);
                     } else if (st_spn_season_id.equals("2") && st_spn_croptyp.equals("10")) {
 
                         lin_quantity_of_used_seed.setVisibility(View.GONE);
@@ -940,6 +1057,9 @@ public class BasicDetails extends AppCompatActivity {
                         tv_dry_weight.setHint("Enter Dry Weight(in Kg)");
                         ll_green_wight.setVisibility(View.VISIBLE);
                         ll_irrigation_source.setVisibility(View.VISIBLE);
+                        ll_type_of_fields.setVisibility(View.GONE);
+                        ll_type_of_land.setVisibility(View.VISIBLE);
+                        ll_length_ofField.setVisibility(View.VISIBLE);
 
                     } else if (st_spn_season_id.equals("1") && st_spn_croptyp.equals("16")) {
                         lin_noOfMaize.setVisibility(View.GONE);
@@ -967,6 +1087,11 @@ public class BasicDetails extends AppCompatActivity {
                         tv_dry_weight.setHint("Enter Dry Weight(in Kg)");
                         ll_green_wight.setVisibility(View.VISIBLE);
                         ll_irrigation_source.setVisibility(View.VISIBLE);
+                        ll_type_of_fields.setVisibility(View.GONE);
+
+                        ll_type_of_land.setVisibility(View.VISIBLE);
+                        ll_length_ofField.setVisibility(View.VISIBLE);
+
                     } else if (st_spn_season_id.equals("3") && st_spn_croptyp.equals("14")) {
                         lin_noOfMaize.setVisibility(View.GONE);
                         lin_weightOFMaize.setVisibility(View.GONE);
@@ -993,6 +1118,10 @@ public class BasicDetails extends AppCompatActivity {
                         tv_dry_weight.setHint("Weight Of Dry daana");
                         ll_green_wight.setVisibility(View.VISIBLE);
                         ll_irrigation_source.setVisibility(View.VISIBLE);
+                        ll_type_of_fields.setVisibility(View.GONE);
+                        ll_type_of_land.setVisibility(View.VISIBLE);
+                        ll_length_ofField.setVisibility(View.VISIBLE);
+
                     } else if (st_spn_season_id.equals("3") && st_spn_croptyp.equals("13")) {
                         lin_noOfMaize.setVisibility(View.GONE);
                         lin_weightOFMaize.setVisibility(View.GONE);
@@ -1019,6 +1148,10 @@ public class BasicDetails extends AppCompatActivity {
                         tv_dry_weight.setHint("Enter Dry Weight(in Kg)");
                         ll_green_wight.setVisibility(View.VISIBLE);
                         ll_irrigation_source.setVisibility(View.VISIBLE);
+                        ll_type_of_fields.setVisibility(View.GONE);
+                        ll_type_of_land.setVisibility(View.VISIBLE);
+                        ll_length_ofField.setVisibility(View.VISIBLE);
+
                     } else if (st_spn_season_id.equals("3") && st_spn_croptyp.equals("15")) {
                         lin_noOfMaize.setVisibility(View.VISIBLE);
                         lin_weightOFMaize.setVisibility(View.VISIBLE);
@@ -1045,7 +1178,12 @@ public class BasicDetails extends AppCompatActivity {
                         tv_dry_weight.setHint("Enter Dry Weight(in Kg)");
                         ll_green_wight.setVisibility(View.VISIBLE);
                         ll_irrigation_source.setVisibility(View.VISIBLE);
+                        ll_type_of_fields.setVisibility(View.GONE);
+                        ll_type_of_land.setVisibility(View.VISIBLE);
+                        ll_length_ofField.setVisibility(View.VISIBLE);
+
                     } else if (st_spn_season_id.equals("2") && (st_spn_croptyp.equals("9"))) {
+
                         lin_geenWeight.setVisibility(View.VISIBLE);
                         lin_dryWeight.setVisibility(View.VISIBLE);
                         et_greenWeight.setVisibility(View.VISIBLE);
@@ -1072,7 +1210,13 @@ public class BasicDetails extends AppCompatActivity {
                         tv_dry_weight.setHint("Enter Dry Weight(in Kg)");
                         ll_green_wight.setVisibility(View.VISIBLE);
                         ll_irrigation_source.setVisibility(View.VISIBLE);
-                    } else {
+                        ll_type_of_fields.setVisibility(View.GONE);
+                        ll_type_of_land.setVisibility(View.VISIBLE);
+                        ll_length_ofField.setVisibility(View.VISIBLE);
+
+                    }
+                   /* else {
+
                         ll_typeList.setVisibility(View.GONE);
                         ll_podweightafter_plucking.setVisibility(View.GONE);
                         ll_podweightafter_threshing.setVisibility(View.GONE);
@@ -1083,17 +1227,22 @@ public class BasicDetails extends AppCompatActivity {
                         tv_dry_weight.setHint("Enter Dry Weight(in Kg)");
                         ll_green_wight.setVisibility(View.VISIBLE);
                         ll_irrigation_source.setVisibility(View.VISIBLE);
-                    }
+                        ll_type_of_fields.setVisibility(View.GONE);
+                        ll_type_of_land.setVisibility(View.VISIBLE);
+                        ll_length_ofField.setVisibility(View.VISIBLE);
+                    }*/
 
                 } else {
                     st_spn_croptyp = "";
                     st_spn_croptype_nm = "";
+                    ll_type_of_fields.setVisibility(View.GONE);
                 }
 
             }
 
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
+            public void onNothingSelected(AdapterView<?> parent)
+            {
                 // TODO Auto-generated method stub
 
             }
@@ -1583,6 +1732,83 @@ public class BasicDetails extends AppCompatActivity {
         });
 
 
+        spn_type_of_field.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // TODO Auto-generated method stub
+
+                if (position > 0) {
+                    type_of_field = typeofFieldArray[position];
+                    if (type_of_field.equals("Plain")) {
+                        type_of_field_id="9";
+                        ll_bundles.setVisibility(View.GONE);
+                        ll_green_wight.setVisibility(View.VISIBLE);
+                        ll_no_of_Lines.setVisibility(View.GONE);
+                        ll_length_of_Lines.setVisibility(View.GONE);
+                        et_no_of_Lines.setText("");
+                        ll_length_ofField.setVisibility(View.VISIBLE);
+                        ll_breadth_ofField.setVisibility(View.VISIBLE);
+                        et_no_of_Lines.setText("");
+                        et_length_Lines.setText("");
+
+                    } else if (type_of_field.equals("Lines")) {
+                        type_of_field_id="10";
+                        et_length.setText("");
+                        et_breath.setText("");
+                        ll_bundles.setVisibility(View.GONE);
+                        ll_green_wight.setVisibility(View.VISIBLE);
+                        lin_weightofBundles.setVisibility(View.GONE);
+                        ll_total_wt.setVisibility(View.GONE);
+                        ll_no_of_Lines.setVisibility(View.VISIBLE);
+                        ll_length_of_Lines.setVisibility(View.VISIBLE);
+                        et_bundle1.setVisibility(View.GONE);
+                        et_bundle2.setVisibility(View.GONE);
+                        et_bundle3.setVisibility(View.GONE);
+                        et_bundle4.setVisibility(View.GONE);
+                        et_bundle5.setVisibility(View.GONE);
+                        et_bundle6.setVisibility(View.GONE);
+                        et_bundle7.setVisibility(View.GONE);
+                        et_bundle8.setVisibility(View.GONE);
+                        ll_length_ofField.setVisibility(View.GONE);
+                        ll_breadth_ofField.setVisibility(View.GONE);
+                    }
+
+                } else {
+                    et_length.setText("");
+                    et_breath.setText("");
+                    et_no_of_Lines.setText("");
+                    et_length_Lines.setText("");
+                    type_of_field = "";
+                    type_of_field_id = "";
+                    et_no_of_Lines.setText("");
+                    ll_bundles.setVisibility(View.GONE);
+                    lin_weightofBundles.setVisibility(View.GONE);
+                    et_bundle1.setVisibility(View.GONE);
+                    et_bundle2.setVisibility(View.GONE);
+                    et_bundle3.setVisibility(View.GONE);
+                    et_bundle4.setVisibility(View.GONE);
+                    et_bundle5.setVisibility(View.GONE);
+                    et_bundle6.setVisibility(View.GONE);
+                    et_bundle7.setVisibility(View.GONE);
+                    et_bundle8.setVisibility(View.GONE);
+                    ll_no_of_Lines.setVisibility(View.GONE);
+                    ll_length_of_Lines.setVisibility(View.GONE);
+                    ll_total_wt.setVisibility(View.GONE);
+
+                }
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // TODO Auto-generated method stub
+
+            }
+
+        });
+
+
         final DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear,
@@ -1842,7 +2068,15 @@ public class BasicDetails extends AppCompatActivity {
         spn_bundles = (Spinner) findViewById(R.id.spn_bundles);
         tv_dry_weight = (TextView) findViewById(R.id.tv_dry_weight);
         ll_irrigation_source = (LinearLayout) findViewById(R.id.ll_irrigation_source);
-
+        spn_type_of_field=findViewById(R.id.spn_type_of_field);
+        ll_type_of_fields=findViewById(R.id.ll_type_of_fields);
+        ll_type_of_land=findViewById(R.id.ll_type_of_land);
+        ll_length_ofField=findViewById(R.id.ll_length_ofField);
+        ll_breadth_ofField=findViewById(R.id.ll_breadth_ofField);
+        ll_no_of_Lines=findViewById(R.id.ll_no_of_Lines);
+        et_no_of_Lines=findViewById(R.id.et_no_of_Lines);
+        et_length_Lines=findViewById(R.id.et_length_Lines);
+        ll_length_of_Lines=findViewById(R.id.ll_length_of_Lines);
         loadFinancialYear();
 
         loadPanchayatData(PanchayatList);
@@ -2246,7 +2480,11 @@ public class BasicDetails extends AppCompatActivity {
         basicInfo.setBundle7(et_bundle7.getText().toString());
         basicInfo.setBundle8(et_bundle8.getText().toString());
         basicInfo.setDryFiber_weight(et_dry_weight_fiber.getText().toString());
-        //basicInfo.setDry_weight_of_dana(et_dry_weight_fiber.getText().toString());
+        basicInfo.setNoof_Lines(et_no_of_Lines.getText().toString());
+        basicInfo.setLength_of_selected_lines(et_length_Lines.getText().toString());
+        basicInfo.setField_type_id(type_of_field_id);
+        basicInfo.setField_type_name(type_of_field);
+
         String s = getCurrentDate();
         basicInfo.setEntryDate(getCurrentDate());
         c = placeData.InsertInBasicDetails(basicInfo);
@@ -2690,6 +2928,8 @@ public class BasicDetails extends AppCompatActivity {
         et_maizeweightafter_plucking.setText(basicInfo.get(0).getBaal_wt_plucking());
         et_maizeweightafter_threshing.setText(basicInfo.get(0).getBaal_wt_threshing());
         et_dry_weight_fiber.setText(basicInfo.get(0).getDryFiber_weight());
+        et_no_of_Lines.setText(basicInfo.get(0).getNoof_Lines());
+        et_length_Lines.setText(basicInfo.get(0).getLength_of_selected_lines());
 
         et_remarks1.setText(basicInfo.get(0).getRemarks1());
 
@@ -2764,6 +3004,21 @@ public class BasicDetails extends AppCompatActivity {
         et_total_bundle_weight.setText(basicInfo.get(0).getTotal_bundle_weight());
         et_dry_weight_fiber.setText(basicInfo.get(0).getDryFiber_weight());
 
+        if (getIntent().hasExtra("KeyId"))
+        {
+            spn_type_of_field.setSelection((((ArrayAdapter<String>) spn_type_of_field.getAdapter()).getPosition(basicInfo.get(0).getField_type_name())));
+        }
+
+        if (basicInfo.get(0).getField_type_name().equals("Plain"))
+        {
+            ll_length_of_Lines.setVisibility(View.VISIBLE);
+            ll_breadth_ofField.setVisibility(View.VISIBLE);
+        }
+        else if (basicInfo.get(0).getField_type_name().equals("Lines"))
+        {
+            ll_length_of_Lines.setVisibility(View.GONE);
+            ll_breadth_ofField.setVisibility(View.GONE);
+        }
 
 
     }
@@ -2846,6 +3101,13 @@ public class BasicDetails extends AppCompatActivity {
         basicInfo.setBundle8(et_bundle8.getText().toString());
         basicInfo.setTotal_bundle_weight(et_total_bundle_weight.getText().toString());
         basicInfo.setDryFiber_weight(et_dry_weight_fiber.getText().toString());
+
+        basicInfo.setNoof_Lines(et_no_of_Lines.getText().toString());
+        basicInfo.setLength_of_selected_lines(et_length_Lines.getText().toString());
+        basicInfo.setField_type_id(type_of_field_id);
+        basicInfo.setField_type_name(type_of_field);
+
+
         String s = getCurrentDate();
         Log.e("UpdateDate", s);
         basicInfo.setEntryDate(getCurrentDate());

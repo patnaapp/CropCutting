@@ -207,23 +207,23 @@ public class WebServiceHelper {
                 request.addProperty("WeightOfProductBreaking", data.getPod_wt_plucking());
                 request.addProperty("WeightOfProductBeating", data.getPod_wt_threshing());
             }
-            else {
+            else
+            {
                 request.addProperty("WeightOfProductBreaking", "");
                 request.addProperty("WeightOfProductBeating", "");
             }
 
-
             request.addProperty("EntryDate", data.getEntryDate());
+            request.addProperty("TypeOfShape", data.getField_type_id());
+            request.addProperty("NoOfLine", data.getNoof_Lines());
+            request.addProperty("NoOfSelectedLine", data.getLength_of_selected_lines());
 
 
-            SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
-                    SoapEnvelope.VER11);
+            SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
             envelope.dotNet = true;
             envelope.setOutputSoapObject(request);
-            envelope.addMapping(SERVICENAMESPACE,
-                    BasicInfo.Basicdetail.getSimpleName(), BasicInfo.Basicdetail);
-            HttpTransportSE androidHttpTransport = new HttpTransportSE(
-                    SERVICEURL);
+            envelope.addMapping(SERVICENAMESPACE,BasicInfo.Basicdetail.getSimpleName(), BasicInfo.Basicdetail);
+            HttpTransportSE androidHttpTransport = new HttpTransportSE(SERVICEURL);
             androidHttpTransport.call(SERVICENAMESPACE + BASIC_DETAILS, envelope);
             Object result = envelope.getResponse();
             if (result != null) {

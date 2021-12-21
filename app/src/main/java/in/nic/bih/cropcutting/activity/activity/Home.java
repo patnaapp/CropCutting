@@ -806,6 +806,21 @@ public class Home extends AppCompatActivity {
             AlterTable1("BasicDetails", "DuringThreshing_Img");
         }
 
+        if (isColumnExists("BasicDetails", "No_Of_Lines") == false) {
+            AlterTable1("BasicDetails", "No_Of_Lines");
+        }
+        if (isColumnExists("BasicDetails", "LengthOfSelectedLine") == false) {
+            AlterTable1("BasicDetails", "LengthOfSelectedLine");
+        }
+
+        if (isColumnExists("BasicDetails", "TypeOfField_Id") == false) {
+            AlterTable1("BasicDetails", "TypeOfField_Id");
+        }
+
+        if (isColumnExists("BasicDetails", "TypeOfField_Name") == false) {
+            AlterTable1("BasicDetails", "TypeOfField_Name");
+        }
+
 
     }
 

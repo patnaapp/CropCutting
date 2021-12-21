@@ -465,6 +465,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
             values.put("Type_id", result.getType_id());
             values.put("Type_name", result.getType_name());
+            values.put("No_Of_Lines", result.getNoof_Lines());
+            values.put("LengthOfSelectedLine", result.getLength_of_selected_lines());
+            values.put("TypeOfField_Id", result.getField_type_id());
+            values.put("TypeOfField_Name", result.getField_type_name());
 
             c = db.insert("BasicDetails", null, values);
 
@@ -486,7 +490,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
             String[] args = {Userid};
 
-            Cursor cursor = sqLiteDatabase.rawQuery("select Id,Latitude,Agriculture_year,Season,Crop,District,Block,Panchayat,Name_of_selected_village,Highest_plot_no_of_Panchayat,Selected_Survey_No_Khesra,Farmer_Name,Operational_Size_holding,Area_of_crop,System_of_cutivation,Type_Of_crop_varities,Irrigation_source,Type_of_manure,Quantity_of_used_manure,Source_of_seed,Quantity_of_used_seed,Weather_condition_during,Extend_of_damage,Remarks,EntryBy,Random_no_allotted_DCO,Order_Of_Experiment_according_to_random_No,Shape_of_Cce_area,Length_of_field,Breadth_of_field,Type_of_land,Date_of_cutting,Green_weight,Dry_weight,No_of_baal_Maize,Weight_of_baal_Maize,Green_weight_of_Dana,Dry_weight_of_dana,remarks1,Inspection_done,Quantity_seed_in,UnitOperationalSize,UnitAreaCoverage,Longitude,EntryDate,Type_of_land_Name,Weather_condition_during_name,sourceofseed_name,tymanure_name,systemcultivation_name,varitiescrop_name,CropName,Sub_Varities_Of_crop,DuringThreshing_Img,Type_id,Type_name,Pod_wt_aftr_plucking,Pod_Wt_after_thresing,Baal_wt_aftr_plucking,Baal_wt_aftr_threshing,Total_bundles,bundle1,bundle2,bundle3,bundle4,bundle5,bundle6,bundle7,bundle8,total_bundle_weight,dry_fiber_weight From BasicDetails where Latitude IS NOT NULL AND EntryBy=? ORDER BY Id  DESC", args);
+            Cursor cursor = sqLiteDatabase.rawQuery("select Id,Latitude,Agriculture_year,Season,Crop,District,Block,Panchayat,Name_of_selected_village,Highest_plot_no_of_Panchayat,Selected_Survey_No_Khesra,Farmer_Name,Operational_Size_holding,Area_of_crop,System_of_cutivation,Type_Of_crop_varities,Irrigation_source,Type_of_manure,Quantity_of_used_manure,Source_of_seed,Quantity_of_used_seed,Weather_condition_during,Extend_of_damage,Remarks,EntryBy,Random_no_allotted_DCO,Order_Of_Experiment_according_to_random_No,Shape_of_Cce_area,Length_of_field,Breadth_of_field,Type_of_land,Date_of_cutting,Green_weight,Dry_weight,No_of_baal_Maize,Weight_of_baal_Maize,Green_weight_of_Dana,Dry_weight_of_dana,remarks1,Inspection_done,Quantity_seed_in,UnitOperationalSize,UnitAreaCoverage,Longitude,EntryDate,Type_of_land_Name,Weather_condition_during_name,sourceofseed_name,tymanure_name,systemcultivation_name,varitiescrop_name,CropName,Sub_Varities_Of_crop,DuringThreshing_Img,Type_id,Type_name,Pod_wt_aftr_plucking,Pod_Wt_after_thresing,Baal_wt_aftr_plucking,Baal_wt_aftr_threshing,Total_bundles,bundle1,bundle2,bundle3,bundle4,bundle5,bundle6,bundle7,bundle8,total_bundle_weight,dry_fiber_weight,No_Of_Lines,LengthOfSelectedLine,TypeOfField_Id,TypeOfField_Name From BasicDetails where Latitude IS NOT NULL AND EntryBy=? ORDER BY Id  DESC", args);
             int x = cursor.getCount();
 
             while (cursor.moveToNext()) {
@@ -561,6 +565,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 basicInfo.setBaal_wt_plucking((cursor.getString(cursor.getColumnIndex("Baal_wt_aftr_plucking"))));
                 basicInfo.setBaal_wt_threshing((cursor.getString(cursor.getColumnIndex("Baal_wt_aftr_threshing"))));
                 basicInfo.setDryFiber_weight((cursor.getString(cursor.getColumnIndex("dry_fiber_weight"))));
+                basicInfo.setNoof_Lines((cursor.getString(cursor.getColumnIndex("No_Of_Lines"))));
+                basicInfo.setLength_of_selected_lines((cursor.getString(cursor.getColumnIndex("LengthOfSelectedLine"))));
+
+                basicInfo.setField_type_id((cursor.getString(cursor.getColumnIndex("TypeOfField_Id"))));
+                basicInfo.setField_type_name((cursor.getString(cursor.getColumnIndex("TypeOfField_Name"))));
 
                 String[] args2 = {rowID};
                 String selectSQL = "select Img1,Img2 From BasicDetails where Id=? ORDER BY Id  DESC";
@@ -820,7 +829,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
 
             //  Cursor cursor = sqLiteDatabase.rawQuery("select * from BasicDetails where EntryBy=?" + " AND " + " Id=? ", new String[]{userid, sno});
-            Cursor cursor = sqLiteDatabase.rawQuery("select Id,Latitude,Agriculture_year,Agri_year_nm,Season,Crop,District,Block,Panchayat,Name_of_selected_village,Highest_plot_no_of_Panchayat,Selected_Survey_No_Khesra,Farmer_Name,Operational_Size_holding,Area_of_crop,System_of_cutivation,Type_Of_crop_varities,Irrigation_source,Type_of_manure,Quantity_of_used_manure,Source_of_seed,Quantity_of_used_seed,Weather_condition_during,Extend_of_damage,Remarks,EntryBy,Random_no_allotted_DCO,Order_Of_Experiment_according_to_random_No,Shape_of_Cce_area,Length_of_field,Breadth_of_field,Type_of_land,Date_of_cutting,Green_weight,Dry_weight,No_of_baal_Maize,Weight_of_baal_Maize,Green_weight_of_Dana,Dry_weight_of_dana,remarks1,Inspection_done,Quantity_seed_in,UnitOperationalSize,UnitAreaCoverage,Longitude,EntryDate,Type_of_land_Name,Weather_condition_during_name,sourceofseed_name,tymanure_name,systemcultivation_name,varitiescrop_name,CropName,Sub_Varities_Of_crop,Type_id,Type_name,Pod_wt_aftr_plucking,Pod_Wt_after_thresing,Baal_wt_aftr_plucking,Baal_wt_aftr_threshing,Total_bundles,bundle1,bundle2,bundle3,bundle4,bundle5,bundle6,bundle7,bundle8,total_bundle_weight,dry_fiber_weight From BasicDetails where EntryBy=?" + " AND " + " Id=?  ORDER BY Id  DESC", new String[]{userid, sno});
+            Cursor cursor = sqLiteDatabase.rawQuery("select Id,Latitude,Agriculture_year,Agri_year_nm,Season,Crop,District,Block,Panchayat,Name_of_selected_village,Highest_plot_no_of_Panchayat,Selected_Survey_No_Khesra,Farmer_Name,Operational_Size_holding,Area_of_crop,System_of_cutivation,Type_Of_crop_varities,Irrigation_source,Type_of_manure,Quantity_of_used_manure,Source_of_seed,Quantity_of_used_seed,Weather_condition_during,Extend_of_damage,Remarks,EntryBy,Random_no_allotted_DCO,Order_Of_Experiment_according_to_random_No,Shape_of_Cce_area,Length_of_field,Breadth_of_field,Type_of_land,Date_of_cutting,Green_weight,Dry_weight,No_of_baal_Maize,Weight_of_baal_Maize,Green_weight_of_Dana,Dry_weight_of_dana,remarks1,Inspection_done,Quantity_seed_in,UnitOperationalSize,UnitAreaCoverage,Longitude,EntryDate,Type_of_land_Name,Weather_condition_during_name,sourceofseed_name,tymanure_name,systemcultivation_name,varitiescrop_name,CropName,Sub_Varities_Of_crop,Type_id,Type_name,Pod_wt_aftr_plucking,Pod_Wt_after_thresing,Baal_wt_aftr_plucking,Baal_wt_aftr_threshing,Total_bundles,bundle1,bundle2,bundle3,bundle4,bundle5,bundle6,bundle7,bundle8,total_bundle_weight,dry_fiber_weight,No_Of_Lines,LengthOfSelectedLine,TypeOfField_Id,TypeOfField_Name From BasicDetails where EntryBy=?" + " AND " + " Id=?  ORDER BY Id  DESC", new String[]{userid, sno});
 
             //Cursor cursor=sqLiteDatabase.rawQuery("select * from BasicDetails where EntryBy=?"+" AND "+" Id=? "+" ORDER BY " + "Id " +"ASC",new String[]{userid,sno});
             int x = cursor.getCount();
@@ -912,6 +921,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 basicInfo.setBaal_wt_plucking((cursor.getString(cursor.getColumnIndex("Baal_wt_aftr_plucking"))));
                 basicInfo.setBaal_wt_threshing((cursor.getString(cursor.getColumnIndex("Baal_wt_aftr_threshing"))));
                 basicInfo.setDryFiber_weight((cursor.getString(cursor.getColumnIndex("dry_fiber_weight"))));
+
+                basicInfo.setField_type_id((cursor.getString(cursor.getColumnIndex("TypeOfField_Id"))));
+                basicInfo.setField_type_name((cursor.getString(cursor.getColumnIndex("TypeOfField_Name"))));
+                basicInfo.setNoof_Lines((cursor.getString(cursor.getColumnIndex("No_Of_Lines"))));
+                basicInfo.setLength_of_selected_lines((cursor.getString(cursor.getColumnIndex("LengthOfSelectedLine"))));
 
                 String[] args2 = {rowID};
                 String selectSQL = "select Img1,Img2 From BasicDetails where Id=? ORDER BY Id  DESC";
@@ -1027,6 +1041,11 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             values.put("bundle8", result.getBundle8());
             values.put("total_bundle_weight", result.getTotal_bundle_weight());
             values.put("dry_fiber_weight", result.getDryFiber_weight());
+
+            values.put("No_Of_Lines", result.getNoof_Lines());
+            values.put("LengthOfSelectedLine", result.getLength_of_selected_lines());
+            values.put("TypeOfField_Id", result.getField_type_id());
+            values.put("TypeOfField_Name", result.getField_type_name());
             String[] whereArgs = new String[]{(String.valueOf(result.getId()))};
 
             // String[] whereArgs = {result.getId()};
@@ -2205,7 +2224,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
             SQLiteDatabase sqLiteDatabase = this.getReadableDatabase();
             String[] args = {Userid, rowid};
             // Cursor cursor=sqLiteDatabase.rawQuery("select * From BasicDetails where EntryBy=? AND Id=?",args);
-            Cursor cursor = sqLiteDatabase.rawQuery("select Id,Latitude,Agriculture_year,Season,Crop,District,Block,Panchayat,Name_of_selected_village,Highest_plot_no_of_Panchayat,Selected_Survey_No_Khesra,Farmer_Name,Operational_Size_holding,Area_of_crop,System_of_cutivation,Type_Of_crop_varities,Irrigation_source,Type_of_manure,Quantity_of_used_manure,Source_of_seed,Quantity_of_used_seed,Weather_condition_during,Extend_of_damage,Remarks,EntryBy,Random_no_allotted_DCO,Order_Of_Experiment_according_to_random_No,Shape_of_Cce_area,Length_of_field,Breadth_of_field,Type_of_land,Date_of_cutting,Green_weight,Dry_weight,No_of_baal_Maize,Weight_of_baal_Maize,Green_weight_of_Dana,Dry_weight_of_dana,remarks1,Inspection_done,Quantity_seed_in,UnitOperationalSize,UnitAreaCoverage,Longitude,EntryDate,Type_of_land_Name,Weather_condition_during_name,sourceofseed_name,tymanure_name,systemcultivation_name,varitiescrop_name,CropName,Sub_Varities_Of_crop,DuringThreshing_Img,Type_id,Type_name,Pod_wt_aftr_plucking,Pod_Wt_after_thresing,Baal_wt_aftr_plucking,Baal_wt_aftr_threshing,Total_bundles,bundle1,bundle2,bundle3,bundle4,bundle5,bundle6,bundle7,bundle8,total_bundle_weight,dry_fiber_weight From BasicDetails where EntryBy=? AND Id=?", args);
+            Cursor cursor = sqLiteDatabase.rawQuery("select Id,Latitude,Agriculture_year,Season,Crop,District,Block,Panchayat,Name_of_selected_village,Highest_plot_no_of_Panchayat,Selected_Survey_No_Khesra,Farmer_Name,Operational_Size_holding,Area_of_crop,System_of_cutivation,Type_Of_crop_varities,Irrigation_source,Type_of_manure,Quantity_of_used_manure,Source_of_seed,Quantity_of_used_seed,Weather_condition_during,Extend_of_damage,Remarks,EntryBy,Random_no_allotted_DCO,Order_Of_Experiment_according_to_random_No,Shape_of_Cce_area,Length_of_field,Breadth_of_field,Type_of_land,Date_of_cutting,Green_weight,Dry_weight,No_of_baal_Maize,Weight_of_baal_Maize,Green_weight_of_Dana,Dry_weight_of_dana,remarks1,Inspection_done,Quantity_seed_in,UnitOperationalSize,UnitAreaCoverage,Longitude,EntryDate,Type_of_land_Name,Weather_condition_during_name,sourceofseed_name,tymanure_name,systemcultivation_name,varitiescrop_name,CropName,Sub_Varities_Of_crop,DuringThreshing_Img,Type_id,Type_name,Pod_wt_aftr_plucking,Pod_Wt_after_thresing,Baal_wt_aftr_plucking,Baal_wt_aftr_threshing,Total_bundles,bundle1,bundle2,bundle3,bundle4,bundle5,bundle6,bundle7,bundle8,total_bundle_weight,dry_fiber_weight,No_Of_Lines,LengthOfSelectedLine From BasicDetails where EntryBy=? AND Id=?", args);
 
             int x = cursor.getCount();
 
@@ -2277,6 +2296,8 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 basicInfo.setBaal_wt_plucking((cursor.getString(cursor.getColumnIndex("Baal_wt_aftr_plucking"))));
                 basicInfo.setBaal_wt_threshing((cursor.getString(cursor.getColumnIndex("Baal_wt_aftr_threshing"))));
                 basicInfo.setDryFiber_weight((cursor.getString(cursor.getColumnIndex("dry_fiber_weight"))));
+                basicInfo.setNoof_Lines((cursor.getString(cursor.getColumnIndex("No_Of_Lines"))));
+                basicInfo.setLength_of_selected_lines((cursor.getString(cursor.getColumnIndex("LengthOfSelectedLine"))));
             }
 
             cursor.close();

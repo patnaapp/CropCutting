@@ -192,7 +192,8 @@ public class Phase1HomeActivity extends AppCompatActivity {
 
         img_logout_phase1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 // Build an AlertDialog
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(Phase1HomeActivity.this);
@@ -204,19 +205,17 @@ public class Phase1HomeActivity extends AppCompatActivity {
 
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
+                    public void onClick(DialogInterface dialog, int which)
+                    {
                         logout_phasee1();
-
                     }
                 });
 
                 builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
+                    public void onClick(DialogInterface dialog, int which)
+                    {
                         dialog.dismiss();
-
                     }
                 });
 
@@ -229,8 +228,8 @@ public class Phase1HomeActivity extends AppCompatActivity {
 
     }
 
-    private void logout_phasee1() {
-
+    private void logout_phasee1()
+    {
         final EditText userPass = (EditText) findViewById(R.id.et_password_login);
         final AutoCompleteTextView userName = (AutoCompleteTextView) findViewById(R.id.et_User_Id);
         PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("USERID", "").commit();
@@ -239,17 +238,19 @@ public class Phase1HomeActivity extends AppCompatActivity {
         Intent intent = new Intent(Phase1HomeActivity.this, Login.class);
         startActivity(intent);
         finish();
-
     }
 
-    private void showPending() {
+    private void showPending()
+    {
         int count_phase1 = dataBaseHelper.getNumberTotalOfUploadDataPhase1(UserId);
         Log.e("COunt", String.valueOf(count_phase1));
-        if (count_phase1 > 0) {
+        if (count_phase1 > 0)
+        {
             tv_uploadTask_phase1.setText(String.valueOf(count_phase1));
             tv_EditTask_phase1.setText(String.valueOf(count_phase1));
         }
-        else {
+        else
+            {
             tv_uploadTask_phase1.setText("0");
             tv_EditTask_phase1.setText("0");
         }
@@ -266,14 +267,18 @@ public class Phase1HomeActivity extends AppCompatActivity {
 
     private void getVersion() {
 
-        try {
+        try
+
+        {
 
             version = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
             TextView tv_phase1 = (TextView) findViewById(R.id.txtVersion_phase1);
             tv_phase1.setText("App Version  " + version);
 
 
-        } catch (PackageManager.NameNotFoundException e) {
+        }
+        catch (PackageManager.NameNotFoundException e)
+        {
 
         }
 
