@@ -505,6 +505,18 @@ public class PreHomeActivity extends AppCompatActivity {
         if (isColumnExists("BasicDetails", "dry_fiber_weight") == false) {
             AlterTable("BasicDetails", "dry_fiber_weight");
         }
+        if (isColumnExists("BasicDetails", "No_Of_Lines") == false) {
+            AlterTable("BasicDetails", "No_Of_Lines");
+        }
+        if (isColumnExists("BasicDetails", "LengthOfSelectedLine") == false) {
+            AlterTable("BasicDetails", "LengthOfSelectedLine");
+        }
+        if (isColumnExists("BasicDetails", "TypeOfField_Id") == false) {
+            AlterTable("BasicDetails", "TypeOfField_Id");
+        }
+        if (isColumnExists("BasicDetails", "TypeOfField_Name") == false) {
+            AlterTable("BasicDetails", "TypeOfField_Name");
+        }
     }
 
     public boolean isColumnExists(String table, String column) {
